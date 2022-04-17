@@ -92,7 +92,7 @@ namespace SuckplantMod.Modules
 
             swordHitSoundEvent = CreateNetworkSoundEventDef("SuckplantSwordHit");
 
-            bombExplosionEffect = LoadEffect("BombExplosionEffect", "SuckplantBombExplosion");  
+            bombExplosionEffect = LoadEffect("BombExplosionEffect", "SuckplantBombExplosion");
 
             IsSuckingVFX = Assets.LoadEffect("SuckingVFX");
 
