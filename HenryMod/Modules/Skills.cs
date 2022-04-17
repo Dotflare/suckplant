@@ -3,10 +3,10 @@ using RoR2;
 using RoR2.Skills;
 using System;
 using System.Collections.Generic;
-using HenryMod;
+using SuckplantMod;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
 
     internal static class Skills
@@ -42,7 +42,7 @@ namespace HenryMod.Modules
 
             skill._skillFamily = newFamily;
 
-            HenryMod.Modules.Content.AddSkillFamily(newFamily);
+            SuckplantMod.Modules.Content.AddSkillFamily(newFamily);
             return skill;
         }
         #endregion
@@ -140,7 +140,7 @@ namespace HenryMod.Modules
 
             skillDef.keywordTokens = skillDefInfo.keywordTokens;
 
-            HenryMod.Modules.Content.AddSkillDef(skillDef);
+            SuckplantMod.Modules.Content.AddSkillDef(skillDef);
 
 
             return skillDef;

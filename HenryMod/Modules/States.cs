@@ -1,16 +1,16 @@
-﻿using HenryMod.SkillStates;
-using HenryMod.SkillStates.BaseStates;
+﻿using SuckplantMod.SkillStates;
+using SuckplantMod.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
     public static class States
     {
         internal static void RegisterStates()
         {
             Modules.Content.AddEntityState(typeof(BaseMeleeAttack));
-            Modules.Content.AddEntityState(typeof(SlashCombo));
+            Modules.Content.AddEntityState(typeof(SoakAttack));
 
             Modules.Content.AddEntityState(typeof(Shoot));
 

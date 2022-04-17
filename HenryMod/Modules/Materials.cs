@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
     internal static class Materials
     {
@@ -19,13 +19,13 @@ namespace HenryMod.Modules
 
             tempMat = Assets.mainAssetBundle.LoadAsset<Material>(materialName);
 
-            if (!tempMat)
+           /* if (!tempMat)
             {
                 Log.Error("Failed to load material: " + materialName + " - Check to see that the material in your Unity project matches this name");
                 return new Material(Assets.hotpoo);
             }
 
-            return tempMat.SetHopooMaterial();
+          */  return tempMat.SetHopooMaterial();
         }
 
         public static Material SetHopooMaterial(this Material tempMat)
@@ -47,7 +47,7 @@ namespace HenryMod.Modules
             }
 
             //set shader
-            tempMat.shader = Assets.hotpoo;
+            //tempMat.shader = Assets.hotpoo;
 
             //apply values after shader is set
             tempMat.SetColor("_Color", tempMat.GetColor("_Color"));

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using RoR2.UI;
 using System;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
     internal static class Assets
     {
@@ -19,18 +19,23 @@ namespace HenryMod.Modules
         internal static GameObject swordSwingEffect;
         internal static GameObject swordHitImpactEffect;
 
+        internal static GameObject IsSuckingVFX;
         internal static GameObject bombExplosionEffect;
+
+        internal static GameObject MuzzleVFX;
+
+        internal static GameObject TracerVFX;
 
         // networked hit sounds
         internal static NetworkSoundEventDef swordHitSoundEvent;
 
         // cache these and use to create our own materials
-        internal static Shader hotpoo = RoR2.LegacyResourcesAPI.Load<Shader>("Shaders/Deferred/HGStandard");
-        internal static Material commandoMat;
+        //internal static Shader hotpoo = RoR2.LegacyResourcesAPI.Load<Shader>("Shaders/Deferred/HGStandard");
+       // internal static Material commandoMat;
         private static string[] assetNames = new string[0];
 
         // CHANGE THIS
-        private const string assetbundleName = "myassetbundle";
+        private const string assetbundleName = "suckplantbundle";
 
         internal static void Initialize()
         {
@@ -41,15 +46,15 @@ namespace HenryMod.Modules
             }
 
             LoadAssetBundle();
-            LoadSoundbank();
+            //LoadSoundbank();
             PopulateAssets();
         }
 
         internal static void LoadAssetBundle()
         {
             if (mainAssetBundle == null)
-            {                                                                                     //makesure this "HenryMod." is the same name as your project when you rename it
-                using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("HenryMod." + assetbundleName))
+            {                                                                                     //makesure this "SuckplantMod." is the same name as your project when you rename it
+                using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SuckplantMod." + assetbundleName))
                 {
                     mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
                 }
@@ -66,7 +71,7 @@ namespace HenryMod.Modules
 
         internal static void LoadSoundbank()
         {                                                                                                    //likewise
-            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream("HenryMod.HenryBank.bnk"))
+            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream("SuckplantMod.SuckplantBank.bnk"))
             {
                 byte[] array = new byte[manifestResourceStream2.Length];
                 manifestResourceStream2.Read(array, 0, array.Length);
@@ -85,9 +90,15 @@ namespace HenryMod.Modules
             // feel free to delete everything in here and load in your own assets instead
             // it should work fine even if left as is- even if the assets aren't in the bundle
 
-            swordHitSoundEvent = CreateNetworkSoundEventDef("HenrySwordHit");
+            swordHitSoundEvent = CreateNetworkSoundEventDef("SuckplantSwordHit");
 
-            bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
+            bombExplosionEffect = LoadEffect("BombExplosionEffect", "SuckplantBombExplosion");  
+
+            IsSuckingVFX = Assets.LoadEffect("SuckingVFX");
+
+            MuzzleVFX = Assets.LoadEffect("SuckMuzzleVFX");
+
+            TracerVFX = Assets.LoadEffect("TracerSuckplant");
 
             if (bombExplosionEffect)
             {
@@ -105,8 +116,8 @@ namespace HenryMod.Modules
                 };
             }
 
-            swordSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
-            swordHitImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
+            swordSwingEffect = Assets.LoadEffect("SuckplantSwordSwingEffect", true);
+            swordHitImpactEffect = Assets.LoadEffect("ImpactSuckplantSlash");
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

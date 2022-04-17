@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
     internal static class ItemDisplays
     {
@@ -108,7 +108,7 @@ namespace HenryMod.Modules
             //resetUnused();
         }
 
-        private static void resetUnused() {
+        private static void     resetUnused() {
             foreach (KeyValuePair<string, int> pair in itemDisplayCheckCount) {
                 itemDisplayCheckCount[pair.Key] = 0;
             }

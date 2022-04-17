@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pitch
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Suckplant
+    m_Weight: 0
+  - m_Path: SuckplantEyes
+    m_Weight: 0
+  - m_Path: SuckplantRig
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32
+    m_Weight: 1
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1
+    m_Weight: 1
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4/tentacle5
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4/tentacle5/tentacle5_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4/tentacle34
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4/tentacle34/tentacle35
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4/tentacle34/tentacle35/tentacle36
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle3/tentacle4/tentacle34/tentacle35/tentacle36/tentacle36_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle6
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle6/tentacle7
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle6/tentacle7/tentacle8
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle6/tentacle7/tentacle8/tentacle8_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle9
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle9/tentacle10
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle9/tentacle10/tentacle11
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle9/tentacle10/tentacle11/tentacle11_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle15
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle15/tentacle16
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle15/tentacle16/tentacle17
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle2/tentacle15/tentacle16/tentacle17/tentacle17_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle12
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle12/tentacle14
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle12/tentacle14/tentacle13
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle1/tentacle12/tentacle14/tentacle13/tentacle13_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle19
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle19/tentacle20
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle19/tentacle20/tentacle20_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle21
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle21/tentacle22
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle21/tentacle22/tentacle22_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle23
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle23/tentacle24
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle23/tentacle24/tentacle24_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle25
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle25/tentacle26
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle25/tentacle26/tentacle26_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle27
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle27/tentacle28
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle27/tentacle28/tentacle28_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle29
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle29/tentacle30
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle29/tentacle30/tentacle30_end
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle33
+    m_Weight: 0
+  - m_Path: SuckplantRig/Bone/tentacle31/tentacle32/tentacle33/tentacle33_end
+    m_Weight: 0

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
     internal static class StaticValues
     {

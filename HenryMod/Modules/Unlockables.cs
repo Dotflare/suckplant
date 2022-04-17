@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace SuckplantMod.Modules
 {
     internal static class Unlockables
     {

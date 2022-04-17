@@ -5,11 +5,13 @@ using System;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace HenryMod.SkillStates.BaseStates
+namespace SuckplantMod.SkillStates.BaseStates
 {
     public class BaseMeleeAttack : BaseSkillState
     {
         public int swingIndex;
+
+        public int DamageSoaked;
 
         protected string hitboxName = "Sword";
 
@@ -65,26 +67,12 @@ namespace HenryMod.SkillStates.BaseStates
                 hitBoxGroup = Array.Find<HitBoxGroup>(modelTransform.GetComponents<HitBoxGroup>(), (HitBoxGroup element) => element.groupName == this.hitboxName);
             }
 
-            this.PlayAttackAnimation();
-
-            this.attack = new OverlapAttack();
-            this.attack.damageType = this.damageType;
-            this.attack.attacker = base.gameObject;
-            this.attack.inflictor = base.gameObject;
-            this.attack.teamIndex = base.GetTeam();
-            this.attack.damage = this.damageCoefficient * this.damageStat;
-            this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
-            this.attack.forceVector = this.bonusForce;
-            this.attack.pushAwayForce = this.pushForce;
-            this.attack.hitBoxGroup = hitBoxGroup;
-            this.attack.isCrit = base.RollCrit();
-            this.attack.impactSound = this.impactSound;
+            this.PlaySoakAnimation();
         }
 
-        protected virtual void PlayAttackAnimation()
+        protected virtual void PlaySoakAnimation()
         {
-            base.PlayCrossfade("Gesture, Override", "Slash" + (1 + swingIndex), "Slash.playbackRate", this.duration, 0.05f);
+            Chat.AddMessage("playedanim!");
         }
 
         public override void OnExit()
@@ -96,32 +84,9 @@ namespace HenryMod.SkillStates.BaseStates
             this.animator.SetBool("attacking", false);
         }
 
-        protected virtual void PlaySwingEffect()
+        protected virtual void PlaySoakEffect()
         {
             EffectManager.SimpleMuzzleFlash(this.swingEffectPrefab, base.gameObject, this.muzzleString, true);
-        }
-
-        protected virtual void OnHitEnemyAuthority()
-        {
-            Util.PlaySound(this.hitSoundString, base.gameObject);
-
-            if (!this.hasHopped)
-            {
-                if (base.characterMotor && !base.characterMotor.isGrounded && this.hitHopVelocity > 0f)
-                {
-                    base.SmallHop(base.characterMotor, this.hitHopVelocity);
-                }
-
-                this.hasHopped = true;
-            }
-
-            if (!this.inHitPause && this.hitStopDuration > 0f)
-            {
-                this.storedVelocity = base.characterMotor.velocity;
-                this.hitStopCachedState = base.CreateHitStopCachedState(base.characterMotor, this.animator, "Slash.playbackRate");
-                this.hitPauseTimer = this.hitStopDuration / this.attackSpeedStat;
-                this.inHitPause = true;
-            }
         }
 
         private void FireAttack()
@@ -133,16 +98,8 @@ namespace HenryMod.SkillStates.BaseStates
 
                 if (base.isAuthority)
                 {
-                    this.PlaySwingEffect();
+                    this.PlaySoakEffect();
                     base.AddRecoil(-1f * this.attackRecoil, -2f * this.attackRecoil, -0.5f * this.attackRecoil, 0.5f * this.attackRecoil);
-                }
-            }
-
-            if (base.isAuthority)
-            {
-                if (this.attack.Fire())
-                {
-                    this.OnHitEnemyAuthority();
                 }
             }
         }

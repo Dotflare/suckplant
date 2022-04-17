@@ -1,9 +1,15 @@
-﻿using RoR2;
+﻿using BepInEx.Configuration;
+using RoR2;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
+using EntityStates;
+using System.Linq;
+using RoR2.Skills;
+using R2API;
+using System.Runtime.CompilerServices;
+using RoR2.CharacterAI;
 
-namespace HenryMod.Modules.Characters
+namespace SuckplantMod.Modules.Characters
 {
     internal abstract class CharacterBase
     {
@@ -44,7 +50,6 @@ namespace HenryMod.Modules.Characters
             InitializeSkins();
             InitializeItemDisplays();
 
-            InitializeDoppelganger("Merc");
         }
 
         protected virtual void InitializeCharacterBodyAndModel()
@@ -80,10 +85,7 @@ namespace HenryMod.Modules.Characters
 
         public virtual void InitializeSkins() { }
 
-        public virtual void InitializeDoppelganger(string clone)
-        {
-            Modules.Prefabs.CreateGenericDoppelganger(instance.bodyPrefab, bodyName + "MonsterMaster", clone);
-        }
+        
 
         public virtual void InitializeItemDisplays()
         {
@@ -142,7 +144,7 @@ namespace HenryMod.Modules.Characters
         public float crit = 1f;
 
         //misc stats
-        public float moveSpeed = 7f;
+        public float moveSpeed = 0f;
         public float acceleration = 80f;
         public float jumpPower = 15f;
 

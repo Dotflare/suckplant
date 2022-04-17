@@ -2,9 +2,9 @@
 using RoR2;
 using System.Collections.Generic;
 using UnityEngine;
-using HenryMod.Modules.Characters;
+using SuckplantMod.Modules.Characters;
 
-namespace HenryMod.Modules {
+namespace SuckplantMod.Modules {
     // module for creating body prefabs and whatnot
     // recommended to simply avoid touching this unless you REALLY need to
     // oh boy do I need to
@@ -13,6 +13,7 @@ namespace HenryMod.Modules {
     {
         // cache this just to give our ragdolls the same physic material as vanilla stuff
         private static PhysicMaterial ragdollMaterial;
+
 
         public static GameObject CreateDisplayPrefab(string displayModelName, GameObject prefab, BodyInfo bodyInfo)
         {
@@ -116,7 +117,6 @@ namespace HenryMod.Modules {
 
             if (modelBaseTransform != null) SetupCharacterDirection(newBodyPrefab, modelBaseTransform, model.transform);
             SetupFootstepController(model);
-            SetupRagdoll(model);
 
             Modules.Content.AddCharacterBodyPrefab(newBodyPrefab);
 
@@ -138,6 +138,7 @@ namespace HenryMod.Modules {
             for (int i = bodyPrefab.transform.childCount - 1; i >= 0; i--) {
 
                 Object.DestroyImmediate(bodyPrefab.transform.GetChild(i).gameObject);
+
             }
 
             Transform modelBase = new GameObject("ModelBase").transform;
@@ -327,7 +328,7 @@ namespace HenryMod.Modules {
             footstepHandler.footstepDustPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/GenericFootstepDust");
         }
 
-        private static void SetupRagdoll(GameObject model)
+        /*private static void SetupRagdoll(GameObject model)
         {
             RagdollController ragdollController = model.GetComponent<RagdollController>();
 
@@ -349,6 +350,7 @@ namespace HenryMod.Modules {
                 }
             }
         }
+        */
 
         private static void SetupAimAnimator(GameObject prefab, GameObject model)
         {
@@ -407,7 +409,7 @@ namespace HenryMod.Modules {
         //the material to use. pass in null to use the material in the bundle
         public Material material = null;
         //don't set the hopoo shader on the material, and simply use the material from your prefab, unchanged
-        public bool dontHotpoo = false;
+        public bool dontHotpoo = true;
         //ignores shields and other overlays. use if you're not using a hopoo shader
         public bool ignoreOverlays = false;
     }

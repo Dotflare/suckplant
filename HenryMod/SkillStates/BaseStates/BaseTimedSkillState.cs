@@ -1,7 +1,11 @@
 ﻿using EntityStates;
+using RoR2;
+using RoR2.Audio;
 using System;
+using UnityEngine;
+using UnityEngine.Networking;
 
-namespace HenryMod.SkillStates.BaseStates
+namespace SuckplantMod.SkillStates.BaseStates
 {
     //see example skills below
     public class BaseTimedSkillState : BaseSkillState
@@ -14,12 +18,14 @@ namespace HenryMod.SkillStates.BaseStates
         public static float TimedBaseCastStartTime;
         public static float TimedBaseCastEndTime;
 
+
         protected float duration;
         protected float castStartTime;
         protected float castEndTime;
         protected bool hasFired;
         protected bool isFiring;
         protected bool hasExited;
+        
 
         //initialize your time values here
         protected virtual void InitDurationValues(float baseDuration, float baseCastStartTime, float baseCastEndTime = 1)
@@ -72,6 +78,14 @@ namespace HenryMod.SkillStates.BaseStates
                 return;
             }
         }
+        protected virtual void PlaySoakEffect()
+        {
+            //suckysucky
+        }
+        protected virtual void PlaySoakAnimation()
+        {
+            Chat.AddMessage("playedanim!");
+        }
 
         public override void Update()
         {
@@ -83,12 +97,13 @@ namespace HenryMod.SkillStates.BaseStates
         }
     }
 
-    public class ExampleTimedSkillState : BaseTimedSkillState
+    public class Suckattack : BaseTimedSkillState
     {
         public static float SkillBaseDuration = 1.5f;
         public static float SkillStartTime = 0.2f;
         public static float SkillEndTime =  0.9f;
 
+        public int DamageSoaked;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -110,6 +125,7 @@ namespace HenryMod.SkillStates.BaseStates
         {
             //probably play an animation at the end of the action
         }
+
     }
 
     public class ExampleDelayedSkillState : BaseTimedSkillState
